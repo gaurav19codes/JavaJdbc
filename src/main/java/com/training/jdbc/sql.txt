@@ -1,0 +1,14 @@
+create table credit_info(Acc_no varchar(20) ,
+ Trans_no varchar(20), date_of_trans date not null, amount double);
+ 
+insert into credit_info values('12345111','C112345122','2022-01-16',1000),('12345222','C1123452','2022-02-26',2000),
+('123453','C1123453','2021-06-10',3000),('123454','C1123454','2022-09-12',4000),('12345556','C1123455','2022-08-30',9000);
+
+insert into credit_info values('123451113','C112345744','2022-02-16',1500),('123454','C1123459','2022-09-16',100),
+('123453','C11234579','2022-03-16',1400),('12345111','C1123457864','2022-03-16',1200);
+
+select * from credit_info;
+
+# call the procedure
+call get_credit_info('12345111',02,@bal);
+select @bal as amount;
